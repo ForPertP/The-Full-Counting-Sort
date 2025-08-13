@@ -1,4 +1,4 @@
-void countSort(vector<vector<string>> arr)
+void countSort2(vector<vector<string>> arr)
 {
     std::multimap<int, string> mm;
 
