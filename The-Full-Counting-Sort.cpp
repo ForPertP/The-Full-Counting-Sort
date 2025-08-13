@@ -1,3 +1,17 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string ltrim(const string &);
+string rtrim(const string &);
+vector<string> split(const string &);
+
+/*
+ * Complete the 'countSort' function below.
+ *
+ * The function accepts 2D_STRING_ARRAY arr as parameter.
+ */
+
 void countSort2(vector<vector<string>> arr)
 {
     std::multimap<int, string> mm;
