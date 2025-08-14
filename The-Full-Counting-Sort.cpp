@@ -50,3 +50,51 @@ void countSort2(vector<vector<string>> arr)
     }
 }
 
+
+int main()
+{
+    string n_temp;
+    getline(cin, n_temp);
+
+    int n = stoi(ltrim(rtrim(n_temp)));
+
+    vector<vector<string>> arr(n);
+
+    for (int i = 0; i < n; i++) {
+        arr[i].resize(2);
+
+        string arr_row_temp_temp;
+        getline(cin, arr_row_temp_temp);
+
+        vector<string> arr_row_temp = split(rtrim(arr_row_temp_temp));
+
+        for (int j = 0; j < 2; j++) {
+            string arr_row_item = arr_row_temp[j];
+
+            arr[i][j] = arr_row_item;
+        }
+    }
+
+    countSort(arr);
+
+    return 0;
+}
+
+string ltrim(const string &str)
+{
+    string s(str);
+    s.erase(
+        s.begin(), find_if(s.begin(), s.end(), [](unsigned char ch) { return !isspace(ch); })
+    );
+    return s;
+}
+
+string rtrim(const string &str)
+{
+    string s(str);
+    s.erase(
+        find_if(s.rbegin(), s.rend(), [](unsigned char ch) { return !isspace(ch); }).base(), s.end()
+    );
+    return s;
+}
+
