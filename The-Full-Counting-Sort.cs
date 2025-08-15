@@ -12,7 +12,48 @@ using System.Text.RegularExpressions;
 using System.Text;
 using System;
 
+class Result
+{
 
+    /*
+     * Complete the 'countSort' function below.
+     *
+     * The function accepts 2D_STRING_ARRAY arr as parameter.
+     */
+
+    public static void countSort(List<List<string>> arr)
+    {
+        int n = arr.Count;
+        var buckets = new List<string>[100];
+        
+        for (int i = 0; i < n; i++)
+        {
+            int key = int.Parse(arr[i][0]);
+            string value = (i < n / 2) ? "-" : arr[i][1];
+            
+            if (buckets[key] == null)
+                buckets[key] = new List<string>();
+            
+            buckets[key].Add(value);
+        }
+        
+        var result = new StringBuilder();
+        for (int i = 0; i < 100; i++)
+        {
+            if (buckets[i] != null)
+            {
+                foreach (var str in buckets[i])
+                {
+                    result.Append(str).Append(" ");
+                }
+            }
+        }
+        
+        Console.Write(result.ToString().TrimEnd());        
+    }
+
+
+}
 
 class Solution
 {
