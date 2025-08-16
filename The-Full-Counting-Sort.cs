@@ -53,6 +53,37 @@ class Result
     }
 
 
+    public static void countSort2(List<List<string>> arr)
+    {
+        int n = arr.Count;
+        var buckets = new Dictionary<int, List<string>>();
+        
+        for (int i = 0; i < n; i++)
+        {
+            int key = int.Parse(arr[i][0]);
+            string value = (i < n / 2) ? "-" : arr[i][1];
+            
+            if (!buckets.ContainsKey(key))
+                buckets[key] = new List<string>();
+            
+            buckets[key].Add(value);
+        }
+        
+        var result = new StringBuilder();
+        for (int i = 0; i < 100; i++)
+        {
+            if (buckets.ContainsKey(i))
+            {
+                foreach (var str in buckets[i])
+                {
+                    result.Append(str).Append(" ");
+                }
+            }
+        }
+        
+        Console.Write(result.ToString().TrimEnd());
+    }
+
 }
 
 class Solution
