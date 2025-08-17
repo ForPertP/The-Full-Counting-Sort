@@ -83,8 +83,8 @@ class Result
         
         Console.Write(result.ToString().TrimEnd());
     }
-
 }
+
 
 class Solution
 {
