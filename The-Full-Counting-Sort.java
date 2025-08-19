@@ -19,7 +19,6 @@ class Result {
      */
 
     public static void countSort(List<List<String>> arr) {
-        
         int n = arr.size();
         List<List<String>> buckets = new ArrayList<>(100);
         for (int i = 0; i < 100; i++) {
@@ -32,7 +31,6 @@ class Result {
             buckets.get(key).add(value);
         }
 
-        
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < 100; i++) {
             if (buckets.get(i) != null) {
