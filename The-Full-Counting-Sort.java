@@ -46,6 +46,32 @@ class Result {
     }
 
 
+    public static void countSort2(List<List<String>> arr) {
+        int n = arr.size();
+        Map<Integer, List<String>> buckets = new HashMap<>();
+        
+        for (int i = 0; i < n; i++) {
+            int key = Integer.parseInt(arr.get(i).get(0));
+            String value = (i < n / 2) ? "-" : arr.get(i).get(1);
+            
+            if (!buckets.containsKey(key)) {
+                buckets.put(key, new ArrayList<>());
+            }
+            
+            buckets.get(key).add(value);
+        }
+        
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < 100; i++) {
+            if (buckets.containsKey(i)) {
+                for (String str : buckets.get(i)) {
+                    result.append(str).append(" ");
+                }
+            }
+        }
+        
+        System.out.print(result.toString().trim());
+    }
 }
 
 
