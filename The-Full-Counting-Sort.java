@@ -10,7 +10,17 @@ import java.util.stream.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
+class Result {
 
+    /*
+     * Complete the 'countSort' function below.
+     *
+     * The function accepts 2D_STRING_ARRAY arr as parameter.
+     */
+
+    public static void countSort(List<List<String>> arr) {
+    }        
+}
 
 
 public class Solution {
